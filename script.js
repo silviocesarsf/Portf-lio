@@ -7,7 +7,6 @@ const menuBg = document.querySelector('.menu-bg')
 const textMenu = document.querySelector('.text-menu')
 const btnAirPlane = document.querySelector('.btn-airplane')
 const airPlane = document.querySelector('.airplane')
-const btnArrow = document.querySelectorAll('.button-project')
 
 // Menu responsivo
 
@@ -35,3 +34,11 @@ menuClose.addEventListener('click', () => {
     textMenu.style.animation = ''
 })
 
+// Animação
+
+btnAirPlane.addEventListener('mouseover', () => {
+    airPlane.style.animation = 'airplane .5s ease-in normal'
+    btnAirPlane.addEventListener('animationend', () => {
+        airPlane.style.animation = 'fadeIn .8s ease-in normal'
+    } )
+})

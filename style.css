@@ -69,6 +69,19 @@ a {
 	transition: 0.5s linear;
 }
 
+.dwn-cv > i {
+	padding-left: .5rem;
+	animation: download .5s ease-in-out normal;
+}
+
+.dwn-cv .base-download {
+	height: 2px;
+	width: 10px;
+	position: absolute;
+	background: white;
+	overflow-y: hidden;
+}
+
 button {
 	padding: 10px 30px;
 	background: transparent;
@@ -415,6 +428,16 @@ section {
 
 .text-menu {
 	transition: 0.5s;
+}
+
+@keyframes download {
+	from {
+		transform: translateY(0%);
+	}
+
+	to {
+		transform: translateY(20%);
+	}
 }
 
 @keyframes airplane {
