@@ -3,16 +3,35 @@ const cv = document.querySelector('.cv')
 const menuMob = document.querySelector('.menu-mob')
 const menuClose = document.querySelector('.menu-close')
 const offBtn = document.querySelector('.off-btn')
+const menuBg = document.querySelector('.menu-bg')
+const textMenu = document.querySelector('.text-menu')
+const btnAirPlane = document.querySelector('.btn-airplane')
+const airPlane = document.querySelector('.airplane')
+const btnArrow = document.querySelectorAll('.button-project')
+
+// Menu responsivo
 
 menuMob.addEventListener('click', () => {
-    menu.classList.toggle('on-menu')
+    menu.classList.toggle('off-menu')
+    menu.style.animation = 'menuMob .5s ease-in'
+    menuBg.classList.toggle('off-menu')
+    menuBg.style.animation = 'fadeIn .4s ease'
     menuMob.classList.toggle('off-menu')
-    menuClose.classList.toggle('on-menu')
-    menuClose.style.animation = 'menuClose 2s ease-in-out none'
+    menuClose.classList.toggle('off-menu')
+    setTimeout(() => {
+        textMenu.classList.toggle('off-menu')
+        textMenu.style.animation = 'text 1s'
+    },600)
 })
 
 menuClose.addEventListener('click', () => {
-    menu.classList.remove('on-menu')
-    menuClose.classList.remove('on-menu')
-    menuMob.classList.remove('off-menu')
+    menu.classList.add('off-menu')
+    menu.style.animation = 'menuMobClose .5s ease'
+    menuClose.classList.toggle('off-menu')
+    menuMob.classList.toggle('off-menu')
+    menuBg.classList.toggle('off-menu')
+    menuBg.style.animation = 'fadeOut .4s ease'
+    textMenu.classList.toggle('off-menu')
+    textMenu.style.animation = ''
 })
+
